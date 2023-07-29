@@ -31,6 +31,7 @@ html {
 /* PAGE STYLES */
 
 body {
+    overflow-x: hidden;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -252,12 +253,7 @@ main {
     border-radius: 16px;
     background: var(--clr-white);
     box-shadow: 0px 2px 4px 0px rgba(234, 234, 229, 0.20);
-    /* Зададим возможность горизонтальной прокрутки */
-    overflow-x: scroll;
-    /* Для Сафари дополнительно зададим инерцию при прокрутке.
-    С инерцией меню будет «оттягиваться» при попытке прокрутить
-    его за его пределы. */
-    -webkit-overflow-scrolling: touch;
+
     mask-image: linear-gradient(90deg,
             transparent 0, rgba(0, 0, 0, .25) 9px,
             #000 18px,
@@ -267,13 +263,17 @@ main {
     padding-bottom: 20px;
     /* С помощью отрицательного отступа
   компенсируем «нарощенное» поле  */
-    margin-bottom: -20px;
+    margin-bottom: -20px;cursor: grab;
 }
 
 .prediction__audio-player__signs {
     display: flex;
-    overflow: hidden;
-
+    /* Зададим возможность горизонтальной прокрутки */
+    overflow-x: scroll;
+    /* Для Сафари дополнительно зададим инерцию при прокрутке.
+    С инерцией меню будет «оттягиваться» при попытке прокрутить
+    его за его пределы. */
+    -webkit-overflow-scrolling: touch;
 }
 
 .prediction__audio-player__signs:last-child {
