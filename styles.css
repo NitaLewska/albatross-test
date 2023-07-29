@@ -1,0 +1,326 @@
+/* Box Model Fix */
+
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* UTILITY CLASSES */
+
+.container {
+    width: 67.5rem;
+    max-width: 88.75vw;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* PAGE STYLES */
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Commissioner', sans-serif;
+    --clr-white: #FFF;
+    --clr-light-grey: #F5F0F0;
+    --clr-dark-grey: #959494;
+    --clr-black-text: #232323;
+    --clr-black-bg: #262626;
+    --clr-coral: #FFF;
+    --clr-light-pink: #FFF;
+    --clr-blue: #FFF;
+    --clr-light-blue: #FFF;
+    --gradient-light-yellow-pink: linear-gradient(180deg, #FCFFEA 23.96%, #FFCBE1 72.40%, #FFCBCB 100%)
+}
+
+main {
+    width: 100%;
+}
+
+/* HEADER */
+
+.header {
+    height: clamp(4rem, 3.579rem + 2.105vw, 5rem);
+}
+
+.header .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: clamp(6.313rem, 5.76rem + 2.763vw, 7.625rem);
+}
+
+/* MAIN */
+
+/* PREDICTION SECTION */
+
+/* INTRO */
+
+.prediction__intro .container {
+    position: relative;
+}
+
+.prediction__intro .container::after {
+    content: "";
+    position: relative;
+    width: clamp(24.375rem, 23.533rem + 4.211vw, 26.375rem);
+    height: clamp(38.875rem, 37.48rem + 6.974vw, 42.188rem);
+    background-image: url(img/flower-bgi.svg);
+    background-size: contain;
+    position: absolute;
+    top: clamp(2.625rem, 2.414rem + 1.053vw, 3.125rem);
+    left: -10.25rem;
+    z-index: 0;
+}
+
+@media (max-width: 75rem) {
+    .prediction__intro .container::after {
+        left: unset;
+        right: -9rem;
+    }
+}
+
+.prediction p,
+.prediction h1,
+.prediction h2,
+.prediction iframe {
+    position: relative;
+    z-index: 3;
+    color: var(--clr-black-text);
+}
+
+.prediction__intro {
+    background: var(--gradient-light-yellow-pink);
+    width: 100%;
+}
+
+.prediction__intro .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: clamp(1.5rem, 1.079rem + 2.105vw, 2.5rem);
+    gap: 0.5rem;
+}
+
+.prediction__intro-heading {
+    width: 25ch;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 128.5%;
+}
+
+.prediction__intro-description {
+    font-size: 1.188rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 147.4%;
+    width: 540px;
+    margin-bottom: 5rem;
+}
+
+/* VIDEO */
+
+.prediction__video {
+    background-color: var(--clr-light-grey);
+}
+
+.prediction__video .container {
+    margin-top: -2.5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 75rem) {
+    .prediction__video .container {
+        flex-direction: column;
+        margin-top: -1.5rem;
+    }
+}
+
+.prediction__video__aside {
+    display: flex;
+    flex-direction: column;
+    width: 15.875rem;
+}
+
+@media (max-width: 75rem) {
+    .prediction__video__aside {
+        width: unset;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.prediction__video__aside-photo {
+    width: 7.625rem;
+    aspect-ratio: 1;
+    -webkit-mask-image: url(img/blob.png);
+    mask-image: url(img/blob.png);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+.prediction__video__aside-name {
+    font-family: Commissioner;
+    font-size: 1.438rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 139.13%;
+}
+
+.prediction__video__aside-specialty {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.prediction__video__aside-description {
+    margin-top: 0.5rem;
+    font-size: 1.188rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 147.368%;
+}
+
+.prediction__video__aside-length {
+    margin-top: auto;
+    margin-bottom: clamp(1.5rem, 1.079rem + 2.105vw, 2.5rem);
+    max-width: 20ch;
+}
+
+@media (max-width: 75rem) {
+    .prediction__video__aside-length {
+        display: none;
+    }
+}
+
+.prediction__video__iframe {
+    background-color: black;
+    width: 810px;
+    aspect-ratio: calc(16/9);
+    margin-bottom: clamp(1.5rem, 1.079rem + 2.105vw, 2.5rem);
+}
+
+@media (max-width: 75rem) {
+    .prediction__video__iframe {
+        width: 100vw;
+        margin-left: -5.625vw;
+    }
+}
+
+/* AUDIO */
+.prediction__audio {
+    padding-bottom: clamp(3rem, 2.789rem + 1.053vw, 3.5rem);
+    background-color: var(--clr-light-grey);
+}
+
+.prediction__audio .container {
+    width: 56.25rem;
+}
+
+.prediction__audio-heading {
+    margin-bottom: 1.5rem;
+    font-size: 1.4375rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+}
+
+.prediction__audio ::-webkit-scrollbar {
+    display: none;
+}
+
+.prediction__audio-player {
+    display: flex;
+    padding: 16px 15px 40px 15px;
+    flex-direction: column;
+    border-radius: 16px;
+    background: var(--clr-white);
+    box-shadow: 0px 2px 4px 0px rgba(234, 234, 229, 0.20);
+    /* Зададим возможность горизонтальной прокрутки */
+    overflow-x: scroll;
+    /* Для Сафари дополнительно зададим инерцию при прокрутке.
+    С инерцией меню будет «оттягиваться» при попытке прокрутить
+    его за его пределы. */
+    -webkit-overflow-scrolling: touch;    mask-image: linear-gradient(
+        90deg,
+        transparent 0, rgba(0, 0, 0, .25) 9px,
+        #000 18px,
+        #000 calc(100% - 18px),
+        rgba(0, 0, 0, .25) calc(100% - 9px),
+        transparent
+      );
+}
+
+.prediction__audio-player__signs {
+    display: flex;
+    overflow: hidden;
+
+}
+
+.prediction__audio-player__signs:last-child {
+    margin-right: 0;
+}
+
+.prediction__audio-player__sign {
+    min-width: 4.5rem;
+    height: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+}
+
+.prediction__audio-player__sign:hover {
+    background: url(img/zodiac_sign_hover.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.prediction__audio-player__sign-img {
+    width: 30px;
+}
+
+.prediction__audio-player__sign-name {
+    font-size: 0.75rem;
+    margin-top: 0.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    text-transform: uppercase;
+}
+
+/* FOOTER */
+
+.footer {
+    background: var(--clr-black-bg);
+    padding-block: 2rem;
+}
+
+.footer__copyright {
+    color: var(--clr-dark-grey);
+    font-size: clamp(0.813rem, 0.734rem + 0.395vw, 1rem);
+    font-weight: 400;
+    line-height: 175%;
+    max-width: 42rem;
+}
