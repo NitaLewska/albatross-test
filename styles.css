@@ -245,7 +245,7 @@ main {
 }
 
 .prediction__audio ::-webkit-scrollbar {
-    display: none;
+    visibility: hidden;
 }
 
 .prediction__audio-player {
