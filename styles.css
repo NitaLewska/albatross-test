@@ -382,6 +382,7 @@ main {
     font-style: normal;
     font-weight: 500;
     line-height: 128.571%;
+    margin-bottom: clamp(1.5rem, 1.079rem + 2.105vw, 2.5rem);
 }
 
 .reviews__slider {
