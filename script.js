@@ -6,7 +6,7 @@ $(document).ready(function () {
         dots: true,
         variableWidth: true,
         appendArrows: ".reviews__controls",
-        appendDots: ".reviews__controls",
+        appendDots: ".reviews__controls",adaptiveHeight: false,
         responsive: [
             {
                 breakpoint: 1024,
