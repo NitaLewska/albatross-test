@@ -45,6 +45,7 @@ body {
     --clr-light-pink: #FFF;
     --clr-blue: #FFF;
     --clr-light-blue: #FFF;
+    --gradient-blue: linear-gradient(180deg, #566FF5 0%, #3046BB 100%);
     --gradient-light-yellow-pink: linear-gradient(180deg, #FCFFEA 23.96%, #FFCBE1 72.40%, #FFCBCB 100%)
 }
 
@@ -260,20 +261,18 @@ main {
             #000 calc(100% - 18px),
             rgba(0, 0, 0, .25) calc(100% - 9px),
             transparent);
-    padding-bottom: 20px;
-    /* С помощью отрицательного отступа
-  компенсируем «нарощенное» поле  */
-    margin-bottom: -20px;cursor: grab;
+    cursor: grab;
 }
 
 .prediction__audio-player__signs {
     display: flex;
-    /* Зададим возможность горизонтальной прокрутки */
     overflow-x: scroll;
-    /* Для Сафари дополнительно зададим инерцию при прокрутке.
-    С инерцией меню будет «оттягиваться» при попытке прокрутить
-    его за его пределы. */
     -webkit-overflow-scrolling: touch;
+    background-color: var(--clr-white);
+    border-radius: 1rem 1rem 0 0;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+    overflow-y: hidden;
 }
 
 .prediction__audio-player__signs:last-child {
@@ -313,6 +312,21 @@ main {
 .prediction__audio-player__content {
     display: flex;
     justify-content: space-between;
+    background-color: var(--clr-white);
+    border-radius: 0 0 1rem 1rem ;
+}
+
+@media (max-width: 75rem) {
+    .prediction__audio-player__content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.prediction__audio-player__content audio {
+    max-width: 29.25rem;
+    width: 80vw;
 }
 
 .prediction__audio-player__content-text {
@@ -320,19 +334,39 @@ main {
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
-    width: 23ch;
+    width: 19ch;
 }
 
 .prediction__audio-player__content-button {
     display: flex;
-    height: 48px;
-    padding: 0px 24px;
+    height: 3rem;
+    width: 10.56rem;
+    color: var(--clr-white);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 60px;
+    border-radius: 3.75rem;
     border: none;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 22.8px */
     background: var(--gradient-gradient-2, linear-gradient(180deg, #566FF5 0%, #3046BB 100%));
+}
+
+@media (max-width: 75rem) {
+    .prediction__audio-player__content audio {
+        margin-bottom: 1.5rem;
+    }
+    .prediction__audio-player__content-text {
+        margin-bottom: 1.125rem;
+    }
+}
+
+/* REVIEWS */
+
+.reviews {
+    background-color: var(--clr-black-bg);
 }
 
 /* FOOTER */
