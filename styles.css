@@ -289,6 +289,12 @@ main {
     background-repeat: no-repeat;
 }
 
+.prediction__audio-player__sign.active {
+    background: url(img/zodiac_sign_hover.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
 .prediction__audio-player__sign-img {
     width: 1.875rem;
 }
