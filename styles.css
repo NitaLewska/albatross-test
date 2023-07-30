@@ -353,6 +353,7 @@ main {
     line-height: 120%;
     /* 22.8px */
     background: var(--gradient-blue);
+    cursor: pointer;
 }
 
 .prediction__audio-player__content-button:hover{
