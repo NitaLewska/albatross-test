@@ -361,7 +361,7 @@ main {
 
 @media (max-width: 75rem) {
     .prediction__audio-player__content audio {
-        margin-bottom: 1.5rem;
+        margin-block: 1.5rem;
     }
 
     .prediction__audio-player__content-text {
